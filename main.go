@@ -16,6 +16,7 @@ func main() {
 
 	r := gin.Default()
 
+	r.GET("/health", a.HealthHandler)
 	r.POST("customers", a.PostHandler)
 	r.GET("customers/:customerId", a.GetHandler)
 	r.PUT("customers/:customerId", a.PutHandler)

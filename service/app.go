@@ -16,6 +16,12 @@ func GetApp(db *db.PostgresDB) *App {
 	}
 }
 
+func (a *App) HealthHandler(c *gin.Context) {
+
+	c.JSON(200, "OK")
+
+}
+
 func (a *App) PostHandler(c *gin.Context) {
 
 	status, customer, err := createCustomer(a.db, c)
