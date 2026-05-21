@@ -22,6 +22,6 @@ func main() {
 	r.PUT("customers/:customerId", a.PutHandler)
 	r.DELETE("customers/:customersId", a.DeleteHandler)
 
-	r.Run("localhost:8080")
+	r.Run("0.0.0.0:8080")
 
 }
