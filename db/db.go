@@ -38,15 +38,6 @@ func createDB(secrets map[string]string) *sqlx.DB {
 	if err != nil {
 		log.Fatal(err.Error())
 	}
-	// Create customers table, can be deleted after first run
-	createTableSQL := `
-	CREATE TABLE customers (
-	    id SERIAL PRIMARY KEY,
-	    name VARCHAR(255),
-	    email VARCHAR(255) UNIQUE,
-	    address VARCHAR(255)
-	);
-	`
-	_, err = db.Exec(createTableSQL)
+
 	return db
 }
